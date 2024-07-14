@@ -6,18 +6,23 @@ public class PlayerJump : MonoBehaviour
 {
     private new Rigidbody rigidbody;
     private Vector3 jumpVector;
+    private float halfPlayerHeight;
+    private bool grounded = false;
     [SerializeField] private bool canJump = true;
-    [SerializeField] private float jumpForce = 1f;
+    [SerializeField] private float jumpForce = 100f;
+    [SerializeField] private float forceOfGravity = -9.8f;
+    [SerializeField] private LayerMask playerMask; 
 
     private void Start()
     {
         rigidbody = this.GetComponent<Rigidbody>();
-        Physics.gravity = new Vector3(0, -9.8F, 0);
-
+        Physics.gravity = new Vector3(0, forceOfGravity, 0);
+        halfPlayerHeight = (transform.lossyScale.y / 2);
     }
+
     private void Update()
     {
-        rigidbody.velocity = jumpVector;
+
     }
 
     private void OnEnable()
@@ -32,10 +37,21 @@ public class PlayerJump : MonoBehaviour
 
     void Jump()
     {
-        if (!canJump)
+        //condition ? consequent : alternative
+        jumpVector = (canJump && isGrounded()) ? new Vector3(0, jumpForce, 0) : Vector3.zero;
+        rigidbody.AddForce(jumpVector, ForceMode.Force);
+        grounded = false;
+    }
+
+    private bool isGrounded()
+    {
+        Vector3 down = transform.TransformDirection(Vector3.down);
+        Debug.DrawRay(transform.position, new Vector3(0, -halfPlayerHeight, 0), Color.green, 1000);
+        if (Physics.Raycast(transform.position, down, halfPlayerHeight, ~playerMask))
         {
-            jumpForce = 0;
+            grounded = true;
+            print("They are grounded");
         }
-        jumpVector = new Vector3(0, jumpForce, 0);
+        return grounded;
     }
 }

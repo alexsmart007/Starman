@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 564812809}
   - component: {fileID: 564812808}
   - component: {fileID: 564812810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 1
-  jumpForce: 50
+  jumpForce: 3000
+  forceOfGravity: -100
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
