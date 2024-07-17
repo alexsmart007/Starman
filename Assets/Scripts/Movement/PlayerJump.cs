@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
-    private new Rigidbody rigidbody;
+    private new CharacterController controller;
     private Vector3 jumpVector;
     private float halfPlayerHeight;
     private bool grounded = false;
+    private Vector3 velocity;
     [SerializeField] private bool canJump = true;
     [SerializeField] private float jumpForce = 100f;
     [SerializeField] private float forceOfGravity = -9.8f;
@@ -15,14 +16,18 @@ public class PlayerJump : MonoBehaviour
 
     private void Start()
     {
-        rigidbody = this.GetComponent<Rigidbody>();
+        controller = this.GetComponent<CharacterController>();
         Physics.gravity = new Vector3(0, forceOfGravity, 0);
         halfPlayerHeight = (transform.lossyScale.y / 2);
     }
 
     private void Update()
     {
-
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
+        controller.Move(velocity * Time.deltaTime);
     }
 
     private void OnEnable()
@@ -39,7 +44,6 @@ public class PlayerJump : MonoBehaviour
     {
         //condition ? consequent : alternative
         jumpVector = (canJump && isGrounded()) ? new Vector3(0, jumpForce, 0) : Vector3.zero;
-        rigidbody.AddForce(jumpVector, ForceMode.Force);
         grounded = false;
     }
 
