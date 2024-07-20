@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        rigidbody.velocity = movementForce;
+        rigidbody.MovePosition(rigidbody.position + movementForce * speed * Time.fixedDeltaTime);
     }
 
     private void OnEnable()
@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
             input = Vector2.zero;
         }
         playerInput = input;
-        input *= speed;
         movementForce = new Vector3(input.x, 0, input.y);
     }
 }
