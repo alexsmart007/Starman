@@ -9,6 +9,7 @@ public class InputManager : SingletonMonoBehavior<InputManager>
     public static Action<Vector2> OnMove;
     public static Action<Vector2> OnRotateCamera;
     public static Action OnJump;
+    public static Action<InputAction.CallbackContext> OnStarDash;
 
     private bool inGameplay = true;
     public bool InGameplay => inGameplay;
@@ -29,13 +30,14 @@ public class InputManager : SingletonMonoBehavior<InputManager>
         OnRotateCamera?.Invoke(context.ReadValue<Vector2>());
      }
 
-        public void Jump(InputAction.CallbackContext context)
+     public void Jump(InputAction.CallbackContext context)
      {
-            if (context.started)
-            {
-                OnJump?.Invoke();
-            }
+        if (context.started)
+        {
+            OnJump?.Invoke();
+            OnStarDash?.Invoke(context);
         }
+    }
 
         #endregion
     }
