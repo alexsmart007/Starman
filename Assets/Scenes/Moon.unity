@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canJump: 1
-  jumpHeight: 5
+  jumpHeight: 2
   forceOfGravity: -9.8
   playerMask:
     serializedVersion: 2

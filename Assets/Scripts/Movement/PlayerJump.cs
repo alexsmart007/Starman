@@ -9,7 +9,7 @@ public class PlayerJump : MonoBehaviour
     private bool letPlayerJump = false;
     private Vector3 jumpVelocity;
     [SerializeField] private bool canJump = true;
-    [SerializeField] private float jumpHeight = 100f;
+    [SerializeField] private float jumpHeight = 2f;
     [SerializeField] private float forceOfGravity = -9.8f;
     [SerializeField] private LayerMask playerMask; 
 

@@ -11,11 +11,15 @@ public class InputManager : SingletonMonoBehavior<InputManager>
     public static Action OnJump;
     public static Action<InputAction.CallbackContext> OnStarDash;
 
+    public static Action OnClick;
+    public static Action OnNextDialogue;
+
     private bool inGameplay = true;
     public bool InGameplay => inGameplay;
 
     [SerializeField] PlayerInput playerInput;
 
+    public void SwapToUI() { playerInput.SwitchCurrentActionMap("UI"); inGameplay = false; }
     public void SwapToGameplay() { playerInput.SwitchCurrentActionMap("Gameplay"); inGameplay = true; }
 
     #region Gameplay Layout
@@ -39,5 +43,25 @@ public class InputManager : SingletonMonoBehavior<InputManager>
         }
     }
 
-        #endregion
+    #endregion
+
+    #region UI Layout
+
+    public void Click(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnClick?.Invoke();
+        }
     }
+
+    public void NextDialogue(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnNextDialogue?.Invoke();
+        }
+    }
+
+    #endregion
+}
