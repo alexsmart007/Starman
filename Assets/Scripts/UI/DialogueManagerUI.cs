@@ -93,40 +93,12 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
 
 
         }
-        string nextDialogue = HandleLeadsTo(data.LeadsTo);
+        //Need to figure out how to get the next dialogue
+        string nextDialogue = "NextDialogue";
         StartDialogue(nextDialogue);
 
 
     }
-
-    private string HandleLeadsTo(List<DialogueBranchData> leadsTo)
-    {
-        nextIsPuzzle = false;
-        DialogueBranchData route = null;
-        if (choiceToPath.Count != 0)
-        {
-            route = choiceToPath[choiceSelected];
-        }
-        else
-        {
-            foreach (var routeOption in leadsTo)
-            {
-                if (routeOption.Requirements.Count == 0 || CheckIfMeetsRequirements(routeOption))
-                {
-                    route = routeOption;
-                    break;
-                }
-            }
-        }
-
-        nextIsPuzzle = route.isPuzzle;
-        foreach (var requirment in route.Requirements)
-        {
-            if (requirment.isItemID && requirment.consumesItem) InventoryManager.Instance.DiscardItem(requirment.label);
-        }
-        return route.BranchText;
-    }
-
 
     private IEnumerator ProcessDialogue(DialogueData dialogue, string conversant)
     {
