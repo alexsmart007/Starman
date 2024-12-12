@@ -10,23 +10,11 @@ public static class DialogueHelperClass
     public static readonly string DIALOGUE_MARKER = "Dialogue:";
     public static readonly string LEADS_TO_MARKER = "Leads to:";
 
-
-    [System.Serializable]
-    public class DialogueData
-    {
-        public bool PlayerIsSpeaker;
-        public bool VoiceSpeaker;
-        [SerializeField, TextArea()] public string Dialogue;
-    }
-
     [System.Serializable]
     public class ConversationData
     {
         public string ID;
         public string Conversant;
-        public string Unlocks;
-        public string Sound;
-        public List<DialogueData> Dialogues = new List<DialogueData>();
-        public List<string> Choices = new List<string>();
+        public string NextDialogueID;
     }
 }
