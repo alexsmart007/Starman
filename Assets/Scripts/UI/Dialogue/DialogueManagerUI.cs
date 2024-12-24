@@ -15,8 +15,15 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     [SerializeField] float dialogueSpeed;
     [SerializeField] float dialogueFastSpeed;
 
+    public static Action<ConversationData> OnDialogueStarted;
+    public static Action OnDialogueEnded;
+    public static Action<string, bool> OnTextUpdated;
+
+    [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
+
     float currentDialogueSpeed;
     bool inDialogue;
+    bool continueInputRecieved;
 
     [Button]
     public void StartDialogue(SOConversationData conversation)
@@ -34,7 +41,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         else if (!inDialogue)
         {
             inDialogue = true;
-            ProcessDialogue();
+            InputManager.Instance.SwapToUI();
         }
 
         var SOConversationData = conversationGroup.Find(data => data.Data.ID.ToLower().Equals(dialogueId.ToLower()));
@@ -47,12 +54,45 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         StartCoroutine(HandleConversation(SOConversationData.Data));
     }
 
-        private void ExitDialogue()
+    private IEnumerator HandleConversation(ConversationData data)
+    {
+        OnDialogueStarted?.Invoke(data);
+
+        if (data.Dialogues.Count >= 1 && !data.Dialogues[0].Dialogue.IsNullOrWhitespace())
+        {
+            foreach (var dialogue in data.Dialogues)
+            {
+                yield return ProcessDialogue(dialogue, data.Conversant);
+            }
+        }
+        StartDialogue(data.NextDialogueID);
+    }
+
+    private IEnumerator ProcessDialogue(DialogueData dialogue, string conversant)
+    {
+        OnTextUpdated?.Invoke("", dialogue.PlayerIsSpeaker);
+        string name = "";
+        if (!dialogue.VoiceSpeaker)
+        {
+            name = "<u>" + (dialogue.PlayerIsSpeaker ? "Player" : (conversant + ": ")) + "</u>\n";
+        }
+
+
+        InputManager.OnNextDialogue += OnContinueInput;
+
+        yield return new WaitUntil(() => continueInputRecieved);
+
+        InputManager.OnNextDialogue -= OnContinueInput;
+    }
+
+    private void ExitDialogue()
     {
         inDialogue = false;
         OnDialogueEnded?.Invoke();
-        Controller.Instance.SwapToGameplay();
+        InputManager.Instance.SwapToGameplay();
     }
+
+    private void OnContinueInput() => continueInputRecieved = true;
 
     private void SpeedUpText() => currentDialogueSpeed = currentDialogueSpeed == dialogueFastSpeed ? currentDialogueSpeed = dialogueFastSpeed * 10 : dialogueFastSpeed;
 }

@@ -22,7 +22,6 @@ public class DialogueController : MonoBehaviour
             child.gameObject.SetActive(false);
         }
         textBoxDisplay.Hide();
-        DialogueManager.OnTextUpdated -= textBoxDisplay.UpdateDialogueText;
     }
 
     private void DisplayUI(ConversationData conversation)
@@ -32,17 +31,11 @@ public class DialogueController : MonoBehaviour
             child.gameObject.SetActive(true);
         }
         textBoxDisplay.Display();
-        DialogueManager.OnTextUpdated += textBoxDisplay.UpdateDialogueText;
     }
 
     private void OnDisable()
     {
         DialogueManager.OnDialogueStarted -= DisplayUI;
         DialogueManager.OnDialogueEnded -= HideUI;
-    }
-
-    private void OnDestroy()
-    {
-        DialogueManager.OnTextUpdated -= textBoxDisplay.UpdateDialogueText;
     }
 }
