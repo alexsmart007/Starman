@@ -8,6 +8,7 @@ public class InteractClick : MonoBehaviour
     [SerializeField] private Collider2D newSelectionCollider = null;
     [SerializeField] private Texture2D interactiveCursorTexture;
     [SerializeField] private CurrentCollider currentCollider;
+    [SerializeField] private SOConversationData dialogue;
     private Cursor cursor;
     private bool cursorIsInteractive = false;
 
@@ -29,8 +30,8 @@ public class InteractClick : MonoBehaviour
     void OnMouseOver()
     {
         newSelectionCollider = this.GetComponent<Collider2D>();
-        if (!cursorIsInteractive) InteractiveCursorTexture();
-        if (currentCollider.currentSelectionCollider != newSelectionCollider)
+        if (!cursorIsInteractive && InputManager.inGameplay) InteractiveCursorTexture();
+        else if (currentCollider.currentSelectionCollider != newSelectionCollider)
         {
             currentCollider.currentSelectionCollider = newSelectionCollider;
             DefaultCursorTexture();
@@ -60,7 +61,8 @@ public class InteractClick : MonoBehaviour
     {
         if (newSelectionCollider != null)
         {
-            Debug.Log(newSelectionCollider.gameObject);
+            DefaultCursorTexture();
+            DialogueManager.Instance.StartDialogue(dialogue.Data.ID);
         }
     }
 

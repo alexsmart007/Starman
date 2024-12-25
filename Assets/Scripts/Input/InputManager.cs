@@ -15,7 +15,7 @@ public class InputManager : SingletonMonoBehavior<InputManager>
     public static Action OnNextDialogue;
     public static Action OnSelect;
 
-    private bool inGameplay = true;
+    public static bool inGameplay = true;
     public bool InGameplay => inGameplay;
 
     [SerializeField] PlayerInput playerInput;
@@ -41,6 +41,14 @@ public class InputManager : SingletonMonoBehavior<InputManager>
         {
             OnJump?.Invoke();
             OnStarDash?.Invoke(context);
+        }
+    }
+
+    public void Click(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnClick?.Invoke();
         }
     }
 

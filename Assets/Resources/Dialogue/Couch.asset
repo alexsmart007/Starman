@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89417ce5e54b17b47a116b1c3caf9fa8, type: 3}
-  m_Name: Plant3
+  m_Name: Couch
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Plant3
+    ID: Couch
     Conversant: 
-    NextDialogueID: exit
+    NextDialogueID: Couch2
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
-      Dialogue: Wait it's fake! Huh, well that does make more sense I guess, kind
-        ruins the vibe of the room though. <color=#307ae8>What I thinking about I
-        need to focus on the trial</color>
+      Dialogue: 'That couch doesn''t look the comfiest. I mean this is a court house,
+        the goal isn''t for comfort, I imagine judges don''t want cilents or god
+        forbid attorneys sleeping before a trial. '

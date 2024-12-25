@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0.76862746}
+  m_Color: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 0.9843137}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -303,10 +303,10 @@ RectTransform:
   - {fileID: 265855547}
   m_Father: {fileID: 1764675333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: -778, y: -292}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62247576
 MonoBehaviour:
@@ -683,6 +683,7 @@ MonoBehaviour:
   newSelectionCollider: {fileID: 0}
   interactiveCursorTexture: {fileID: 2800000, guid: 4c7dddea8379f4c49926fd4c65710885, type: 3}
   currentCollider: {fileID: 1007216517}
+  dialogue: {fileID: 11400000, guid: 27ca6fbde4ff09542b997118ba7c1498, type: 2}
 --- !u!1 &722334456
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,9 +772,25 @@ MonoBehaviour:
     m_ActionName: UI/Click[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 722334456}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2eb86f0d-ac7a-42eb-a52f-d52e0ffe8698
+    m_ActionName: Gameplay/Position[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 722334459}
         m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
-        m_MethodName: Select
+        m_MethodName: Click
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -783,8 +800,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 0232fc2b-d2e6-4dfa-b6cf-f9520e888bf1
-    m_ActionName: UI/Position[/Mouse/position]
+    m_ActionId: e50a3e7c-449e-4815-89dd-fbf1e51e44f4
+    m_ActionName: Gameplay/Click[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI
@@ -928,6 +945,7 @@ MonoBehaviour:
   newSelectionCollider: {fileID: 0}
   interactiveCursorTexture: {fileID: 2800000, guid: 4c7dddea8379f4c49926fd4c65710885, type: 3}
   currentCollider: {fileID: 1007216517}
+  dialogue: {fileID: 11400000, guid: 0aaa0e92efe8a004ebe250e06d7a81dd, type: 2}
 --- !u!60 &1187872483
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1275,6 +1293,7 @@ MonoBehaviour:
   newSelectionCollider: {fileID: 0}
   interactiveCursorTexture: {fileID: 2800000, guid: 4c7dddea8379f4c49926fd4c65710885, type: 3}
   currentCollider: {fileID: 1007216517}
+  dialogue: {fileID: 11400000, guid: c09190c1072c47345975dc0a7f6d13f7, type: 2}
 --- !u!1 &1708691971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,8 +1398,8 @@ Transform:
   m_GameObject: {fileID: 1750288629}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: -20.8, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 1}
+  m_LocalPosition: {x: 10.5, y: -20.8, z: 0}
+  m_LocalScale: {x: 165, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 621278473}
@@ -1649,6 +1668,7 @@ MonoBehaviour:
   newSelectionCollider: {fileID: 0}
   interactiveCursorTexture: {fileID: 2800000, guid: 4c7dddea8379f4c49926fd4c65710885, type: 3}
   currentCollider: {fileID: 1007216517}
+  dialogue: {fileID: 11400000, guid: 6a168c744361f2c479695f4fcf7012d8, type: 2}
 --- !u!60 &2019180169
 PolygonCollider2D:
   m_ObjectHideFlags: 0

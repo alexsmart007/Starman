@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89417ce5e54b17b47a116b1c3caf9fa8, type: 3}
-  m_Name: Plant3
+  m_Name: Painting2
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Plant3
+    ID: Painting2
     Conversant: 
-    NextDialogueID: exit
+    NextDialogueID: Painting3
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
-      Dialogue: Wait it's fake! Huh, well that does make more sense I guess, kind
-        ruins the vibe of the room though. <color=#307ae8>What I thinking about I
-        need to focus on the trial</color>
+      Dialogue: ' I love the depth of the colors. Makes it feel like a place that
+        you''ve been to and at the same time a place that doesn''t quite exist. Paradoxical
+        in nature...'

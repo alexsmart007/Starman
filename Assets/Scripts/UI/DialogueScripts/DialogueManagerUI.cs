@@ -28,6 +28,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     protected override void Awake()
     {
         base.Awake();
+        InputManager.Instance.SwapToGameplay();
         conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
     }
 
@@ -89,8 +90,6 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         InputManager.OnNextDialogue += OnContinueInput;
 
         yield return new WaitUntil(() => continueInputRecieved);
-
-        Debug.Log("yooo");
 
         InputManager.OnNextDialogue -= OnContinueInput;
     }

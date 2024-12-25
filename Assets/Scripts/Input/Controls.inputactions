@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Position",
+                    "type": "PassThrough",
+                    "id": "2eb86f0d-ac7a-42eb-a52f-d52e0ffe8698",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Move",
                     "type": "PassThrough",
                     "id": "c44dd94f-f0e8-4abe-ad61-f43107faf5fa",
@@ -28,6 +37,15 @@
                     "type": "PassThrough",
                     "id": "f6f304bc-1e9a-4799-b024-eee377459910",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "e50a3e7c-449e-4815-89dd-fbf1e51e44f4",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -231,6 +249,28 @@
                     "action": "RotateCamera",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a513573-469f-4ebe-b040-e70ad6fd2588",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8fa9e14-ed18-4251-9dc7-5ecde77dc4c8",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -239,22 +279,13 @@
             "id": "3d52d5d5-749b-4009-99dc-e8b4190e7372",
             "actions": [
                 {
-                    "name": "NextDialogue",
+                    "name": "NewDialogue",
                     "type": "Button",
                     "id": "2a37da98-1644-43ba-847e-f34469b051f3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Position",
-                    "type": "PassThrough",
-                    "id": "0232fc2b-d2e6-4dfa-b6cf-f9520e888bf1",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -265,7 +296,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "NextDialogue",
+                    "action": "NewDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -276,7 +307,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "NextDialogue",
+                    "action": "NewDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -287,18 +318,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "NextDialogue",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3c4b76a4-8e00-49b7-b252-d08c3f2c583a",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Position",
+                    "action": "NewDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
