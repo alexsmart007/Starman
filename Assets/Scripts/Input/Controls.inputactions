@@ -239,7 +239,7 @@
             "id": "3d52d5d5-749b-4009-99dc-e8b4190e7372",
             "actions": [
                 {
-                    "name": "Click",
+                    "name": "NextDialogue",
                     "type": "Button",
                     "id": "2a37da98-1644-43ba-847e-f34469b051f3",
                     "expectedControlType": "Button",
@@ -265,7 +265,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Click",
+                    "action": "NextDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c06892db-b401-45c7-a4a5-24f73cf008bc",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd3faf83-84cd-4d93-8a3a-eff3c5ba1681",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

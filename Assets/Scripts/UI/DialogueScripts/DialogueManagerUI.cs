@@ -17,13 +17,19 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
 
     public static Action<ConversationData> OnDialogueStarted;
     public static Action OnDialogueEnded;
-    public static Action<string, bool> OnTextUpdated;
+    public static Action<string> OnTextUpdated;
 
     [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
 
     float currentDialogueSpeed;
     bool inDialogue;
     bool continueInputRecieved;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
+    }
 
     [Button]
     public void StartDialogue(SOConversationData conversation)
@@ -70,17 +76,21 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
 
     private IEnumerator ProcessDialogue(DialogueData dialogue, string conversant)
     {
-        OnTextUpdated?.Invoke("", dialogue.PlayerIsSpeaker);
+        OnTextUpdated?.Invoke("");
         string name = "";
+        continueInputRecieved = false;
         if (!dialogue.VoiceSpeaker)
         {
             name = "<u>" + (dialogue.PlayerIsSpeaker ? "Player" : (conversant + ": ")) + "</u>\n";
         }
 
+        yield return TypewriterDialogue(name, dialogue.Dialogue, dialogue.PlayerIsSpeaker);
 
         InputManager.OnNextDialogue += OnContinueInput;
 
         yield return new WaitUntil(() => continueInputRecieved);
+
+        Debug.Log("yooo");
 
         InputManager.OnNextDialogue -= OnContinueInput;
     }
@@ -90,6 +100,24 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         inDialogue = false;
         OnDialogueEnded?.Invoke();
         InputManager.Instance.SwapToGameplay();
+    }
+
+    private IEnumerator TypewriterDialogue(string name, string line, bool isPlayerSpeaker)
+    {
+        currentDialogueSpeed = dialogueSpeed;
+        string loadedText = name;
+        InputManager.OnNextDialogue += SpeedUpText;
+        bool atSpecialCharacter = false;
+        foreach (char letter in line)
+        {
+            loadedText += letter;
+            atSpecialCharacter = letter == '<' || atSpecialCharacter;
+            if (atSpecialCharacter && letter != '>') continue;
+            atSpecialCharacter = false;
+            OnTextUpdated?.Invoke(loadedText);
+            yield return new WaitForSeconds(1 / currentDialogueSpeed);
+        }
+        InputManager.OnNextDialogue -= SpeedUpText;
     }
 
     private void OnContinueInput() => continueInputRecieved = true;

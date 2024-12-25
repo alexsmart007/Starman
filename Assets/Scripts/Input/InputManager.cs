@@ -13,14 +13,15 @@ public class InputManager : SingletonMonoBehavior<InputManager>
 
     public static Action OnClick;
     public static Action OnNextDialogue;
+    public static Action OnSelect;
 
     private bool inGameplay = true;
     public bool InGameplay => inGameplay;
 
     [SerializeField] PlayerInput playerInput;
 
-    public void SwapToUI() { playerInput.SwitchCurrentActionMap("UI"); inGameplay = false; }
-    public void SwapToGameplay() { playerInput.SwitchCurrentActionMap("Gameplay"); inGameplay = true; }
+    public void SwapToUI() { playerInput.SwitchCurrentActionMap("UI"); inGameplay = false; Debug.Log("In UI Now"); }
+    public void SwapToGameplay() { playerInput.SwitchCurrentActionMap("Gameplay"); inGameplay = true; Debug.Log("In Game Now"); }
 
     #region Gameplay Layout
 
@@ -47,19 +48,19 @@ public class InputManager : SingletonMonoBehavior<InputManager>
 
     #region UI Layout
 
-    public void Click(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            OnClick?.Invoke();
-        }
-    }
-
     public void NextDialogue(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             OnNextDialogue?.Invoke();
+        }
+    }
+
+    public void Select(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnSelect?.Invoke();
         }
     }
 

@@ -19,4 +19,9 @@ public class TextBoxDisplay : MonoBehaviour
             child.gameObject.SetActive(shouldDisplay);
         }
     }
+
+    public void UpdateDialogueText(string text)
+    {
+        dialogueTextField.text = text;
+    }
 }
