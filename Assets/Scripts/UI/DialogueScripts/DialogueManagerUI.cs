@@ -20,6 +20,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     public static Action<string> OnTextUpdated;
 
     [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
+    [SerializeField, ReadOnly] Dictionary<string, int> unlocks = new Dictionary<string, int>();
 
     float currentDialogueSpeed;
     bool inDialogue;
@@ -29,13 +30,21 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     {
         base.Awake();
         InputManager.Instance.SwapToGameplay();
-        conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
     }
 
     [Button]
     public void StartDialogue(SOConversationData conversation)
     {
         StartDialogue(conversation.Data.ID);
+    }
+
+    [Button]
+    public void showUnlocks()
+    {
+        foreach (var (key, value) in unlocks)
+        {
+            Debug.Log("ID: " + key + " and Num: " + value + "\n");
+        }
     }
 
     public void StartDialogue(string dialogueId)
@@ -72,6 +81,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
                 yield return ProcessDialogue(dialogue, data.Conversant);
             }
         }
+        HandleUnlocks(data);
         StartDialogue(data.NextDialogueID);
     }
 
@@ -92,6 +102,18 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         yield return new WaitUntil(() => continueInputRecieved);
 
         InputManager.OnNextDialogue -= OnContinueInput;
+    }
+
+    private void HandleUnlocks(ConversationData data)
+    {
+        if(unlocks.ContainsKey(data.ID))
+        {
+            unlocks[data.ID]++;
+        }
+        else
+        {
+            unlocks.Add(data.ID, 1);
+        }
     }
 
     private void ExitDialogue()
