@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: Door2
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Door3
+    ID: Door2
     Conversant: 
-    NextDialogueID: Door4
+    NextDialogueID: exit
     NewDialogueOnReClick: 0
     NextNewDialogueID: 
-    Dialogues: []
+    Dialogues:
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: I really can't think about leaving...
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: It wouldn't hurt to make sure it's still the door still works
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: Yep.....it still works. Good.

@@ -6,10 +6,6 @@ using UnityEngine;
 
 public static class DialogueHelperClass
 {
-    public static readonly string ID_MARKER = "ID: ";
-    public static readonly string CONVERSANT_MARKER = "Conversant: ";
-    public static readonly string DIALOGUE_MARKER = "Dialogue:";
-    public static readonly string LEADS_TO_MARKER = "Leads to:";
 
     [System.Serializable]
     public class DialogueData

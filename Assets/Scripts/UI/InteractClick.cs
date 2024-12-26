@@ -7,6 +7,7 @@ public class InteractClick : MonoBehaviour
     private Vector2 inputPositionVector;
     [SerializeField] private Collider2D newSelectionCollider = null;
     [SerializeField] private Texture2D interactiveCursorTexture;
+    [SerializeField] private Texture2D defaultCursorTexture;
     [SerializeField] private CurrentCollider currentCollider;
     [SerializeField] private SOConversationData dialogue;
     private Cursor cursor;
@@ -54,7 +55,7 @@ public class InteractClick : MonoBehaviour
     private void DefaultCursorTexture()
     {
         cursorIsInteractive = false;
-        Cursor.SetCursor(default, default, default);
+        Cursor.SetCursor(defaultCursorTexture, default, default);
     }
 
     private void OnClickInteractable()

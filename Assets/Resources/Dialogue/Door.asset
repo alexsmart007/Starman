@@ -16,13 +16,13 @@ MonoBehaviour:
     ID: Door
     Conversant: 
     NextDialogueID: exit
-    NewDialogueOnReClick: 0
-    NextNewDialogueID: 
+    NewDialogueOnReClick: 1
+    NextNewDialogueID: Door2
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
       Dialogue: While it is an appealing prospect to just leave, this is not the
-        time to panic.
+        time to panic. I need to wait for my cilent to arrive.
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
       Dialogue: This is just like any other puzzle, only I need to solve it in front
