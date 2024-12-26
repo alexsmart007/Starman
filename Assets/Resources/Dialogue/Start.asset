@@ -14,9 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conversationData:
     ID: Start
-    Conversant: Wright
-    NextDialogueID: End
+    Conversant: 
+    NextDialogueID: exit
+    NewDialogueOnReClick: 0
+    NextNewDialogueID: 
     Dialogues:
+    - PlayerIsSpeaker: 0
+      VoiceSpeaker: 1
+      Dialogue: <color=#00FF66>December 19th, 7:25 AM<br>District Court<br>Defendant's
+        Lobby</color>
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
-      Dialogue: Is this dialogue?
+      Dialogue: Ok I made it with some time to spare...exactly 35 mins early! Well
+        I guess I have some time to mentally prepare for my first trial!
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: I'm more than a bit nervous haha, I think I should just look around,
+        maybe it'll help me calm down and focus.

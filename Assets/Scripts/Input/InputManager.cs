@@ -20,8 +20,8 @@ public class InputManager : SingletonMonoBehavior<InputManager>
 
     [SerializeField] PlayerInput playerInput;
 
-    public void SwapToUI() { playerInput.SwitchCurrentActionMap("UI"); inGameplay = false; Debug.Log("In UI Now"); }
-    public void SwapToGameplay() { playerInput.SwitchCurrentActionMap("Gameplay"); inGameplay = true; Debug.Log("In Game Now"); }
+    public void SwapToUI() { playerInput.SwitchCurrentActionMap("UI"); inGameplay = false; }
+    public void SwapToGameplay() { playerInput.SwitchCurrentActionMap("Gameplay"); inGameplay = true; }
 
     #region Gameplay Layout
 

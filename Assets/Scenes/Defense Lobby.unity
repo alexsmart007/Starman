@@ -1109,6 +1109,51 @@ PolygonCollider2D:
       - {x: 0.11415547, y: 0.19352888}
       - {x: 0.106279925, y: 0.2066221}
   m_UseDelaunayMesh: 0
+--- !u!1 &1363210728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1363210730}
+  - component: {fileID: 1363210729}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1363210729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363210728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 726dab8c38329d44f9efc21a265dacab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingDialogue: {fileID: 11400000, guid: f52f5fe59ac4b9840a8c54f13082a547, type: 2}
+--- !u!4 &1363210730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363210728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 800.8662, y: 225.84328, z: -3.9627473}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1452434813
 GameObject:
   m_ObjectHideFlags: 0
@@ -1875,3 +1920,4 @@ SceneRoots:
   - {fileID: 1764675333}
   - {fileID: 1708691974}
   - {fileID: 2122255931}
+  - {fileID: 1363210730}

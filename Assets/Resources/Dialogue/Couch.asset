@@ -15,10 +15,16 @@ MonoBehaviour:
   conversationData:
     ID: Couch
     Conversant: 
-    NextDialogueID: Couch2
+    NextDialogueID: exit
+    NewDialogueOnReClick: 0
+    NextNewDialogueID: 
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
       Dialogue: 'That couch doesn''t look the comfiest. I mean this is a court house,
         the goal isn''t for comfort, I imagine judges don''t want cilents or god
         forbid attorneys sleeping before a trial. '
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: Not like I'd be able to get any good sleep in a place like this,
+        right before my first appearance in trial!

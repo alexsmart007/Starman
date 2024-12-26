@@ -30,6 +30,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     {
         base.Awake();
         InputManager.Instance.SwapToGameplay();
+        conversationGroup = Resources.LoadAll<SOConversationData>("Dialogue").ToList();
     }
 
     [Button]
@@ -73,7 +74,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     private IEnumerator HandleConversation(ConversationData data)
     {
         OnDialogueStarted?.Invoke(data);
-
+        if (unlocks.ContainsKey(data.ID) && data.NewDialogueOnReClick) data = (conversationGroup.Find(dataa => dataa.Data.ID.ToLower().Equals(data.NextNewDialogueID.ToLower()))).Data;
         if (data.Dialogues.Count >= 1 && !data.Dialogues[0].Dialogue.IsNullOrWhitespace())
         {
             foreach (var dialogue in data.Dialogues)

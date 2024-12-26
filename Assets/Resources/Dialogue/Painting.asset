@@ -15,9 +15,20 @@ MonoBehaviour:
   conversationData:
     ID: Painting
     Conversant: 
-    NextDialogueID: Painting2
+    NextDialogueID: exit
+    NewDialogueOnReClick: 0
+    NextNewDialogueID: 
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
       Dialogue: Huh, I don't recognize this painting....it's oddly uhhh abstract.
         Maybe a Hockney?
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: ' I love the depth of the colors. Makes it feel like a place that
+        you''ve been to and at the same time a place that doesn''t quite exist. Paradoxical
+        in nature...'
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: ' I don''t know if I should be appreciating art right now! I need
+        to focus!'

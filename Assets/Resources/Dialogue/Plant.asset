@@ -15,10 +15,19 @@ MonoBehaviour:
   conversationData:
     ID: Plant
     Conversant: 
-    NextDialogueID: Plant2
+    NextDialogueID: exit
+    NewDialogueOnReClick: 0
+    NextNewDialogueID: 
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
       Dialogue: I always wonder who waters these plants. There's one in every lobby
         and they always look perfect. There must be a percent amount of these plants
         that die from maltreatment right?
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: Or maybe I'm just really bad at taking care of plants.
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: 'Wait it''s fake! Huh, well that does make more sense I guess, kind
+        ruins the vibe of the room though. '
