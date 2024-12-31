@@ -723,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 616f2b6c43ca2ce48894f39e0f4a097b, type: 3}
+  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
   defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: 27ca6fbde4ff09542b997118ba7c1498, type: 2}
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 616f2b6c43ca2ce48894f39e0f4a097b, type: 3}
+  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
   defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: 0aaa0e92efe8a004ebe250e06d7a81dd, type: 2}
@@ -1244,7 +1244,7 @@ SpriteRenderer:
   m_Size: {x: 64, y: 64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1205976504
@@ -1531,7 +1531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 616f2b6c43ca2ce48894f39e0f4a097b, type: 3}
+  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
   defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: c09190c1072c47345975dc0a7f6d13f7, type: 2}
@@ -1907,7 +1907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 616f2b6c43ca2ce48894f39e0f4a097b, type: 3}
+  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
   defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: 6a168c744361f2c479695f4fcf7012d8, type: 2}

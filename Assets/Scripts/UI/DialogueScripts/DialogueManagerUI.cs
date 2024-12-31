@@ -20,7 +20,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     public static Action<string> OnTextUpdated;
 
     [SerializeField, ReadOnly] List<SOConversationData> conversationGroup;
-    [SerializeField, ReadOnly] Dictionary<string, int> unlocks = new Dictionary<string, int>();
+    public Dictionary<string, int> unlocks = new Dictionary<string, int>();
 
     float currentDialogueSpeed;
     bool inDialogue;
