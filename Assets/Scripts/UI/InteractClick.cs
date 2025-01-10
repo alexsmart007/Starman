@@ -6,8 +6,6 @@ public class InteractClick : MonoBehaviour
 {
     private Vector2 inputPositionVector;
     [SerializeField] private Collider2D newSelectionCollider = null;
-    [SerializeField] private Texture2D interactiveCursorTexture;
-    [SerializeField] private Texture2D defaultCursorTexture;
     [SerializeField] private CurrentCollider currentCollider;
     [SerializeField] private SOConversationData dialogue;
     [SerializeField] private Animator Hand;
@@ -49,16 +47,13 @@ public class InteractClick : MonoBehaviour
     private void InteractiveCursorTexture()
     {
         cursorIsInteractive = true;
-        Vector2 hotspot = new Vector2(interactiveCursorTexture.width / 2, 0);
-        Cursor.SetCursor(interactiveCursorTexture, hotspot, CursorMode.Auto);
-        Hand.SetBool("isInteractable", true);
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.Grab);
     }
 
     private void DefaultCursorTexture()
     {
         cursorIsInteractive = false;
-        Cursor.SetCursor(defaultCursorTexture, default, default);
-        Hand.SetBool("isInteractable", false);
+        CursorManager.Instance.SetActiveCursorType(CursorManager.CursorType.Arrow);
     }
 
     private void OnClickInteractable()
