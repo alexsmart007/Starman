@@ -10,6 +10,7 @@ public class InteractClick : MonoBehaviour
     [SerializeField] private Texture2D defaultCursorTexture;
     [SerializeField] private CurrentCollider currentCollider;
     [SerializeField] private SOConversationData dialogue;
+    [SerializeField] private Animator Hand;
     private Cursor cursor;
     private bool cursorIsInteractive = false;
 
@@ -50,12 +51,14 @@ public class InteractClick : MonoBehaviour
         cursorIsInteractive = true;
         Vector2 hotspot = new Vector2(interactiveCursorTexture.width / 2, 0);
         Cursor.SetCursor(interactiveCursorTexture, hotspot, CursorMode.Auto);
+        Hand.SetBool("isInteractable", true);
     }
 
     private void DefaultCursorTexture()
     {
         cursorIsInteractive = false;
         Cursor.SetCursor(defaultCursorTexture, default, default);
+        Hand.SetBool("isInteractable", false);
     }
 
     private void OnClickInteractable()
