@@ -12,31 +12,23 @@ using static ItemHelperClass;
 
 public class ItemSystem : SingletonMonoBehavior<ItemSystem>
 {
-    [SerializeField, ReadOnly] List<ItemData> Inventory = new List<ItemData>();
+    [SerializeField] List<ItemData> AllItems = new List<ItemData>();
 
-    public static event Action<ItemData> OnItemGained;
-
-    public void GainItem(ItemData item)
+    public ItemData GiveItem(string itemName)
     {
-        item.ItemName = item.ItemName.ToLowerInvariant();
-        Inventory.Add(item);
-        OnItemGained?.Invoke(item);
-    }
-
-    public void DiscardItem(string item)
-    {
-        DiscardItem(Inventory.Find(x => x.ItemName == item));
-    }
-
-    public void DiscardItem(ItemData item)
-    {
-        item.ItemName = item.ItemName.ToLower();
-        Debug.Assert(Inventory.Contains(item));
-        Inventory.Remove(item);
+        ItemData returnItem = null;
+        foreach (ItemData item in AllItems)
+        {
+            if(item.ItemName == itemName)
+            {
+                returnItem = item;
+            }
+        }
+        return returnItem;
     }
 
     public bool CheckForItem(string itemName)
     {
-        return Inventory.Exists(x => x.ItemName == itemName);
+        return AllItems.Exists(x => x.ItemName == itemName);
     }
 }

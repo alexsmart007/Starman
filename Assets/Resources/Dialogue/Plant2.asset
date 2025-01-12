@@ -10,22 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89417ce5e54b17b47a116b1c3caf9fa8, type: 3}
-  m_Name: Door
+  m_Name: Plant2
   m_EditorClassIdentifier: 
   conversationData:
-    ID: Door
+    ID: Plant2
     Conversant: 
     NextDialogueID: exit
-    NewDialogueOnReClick: 1
-    NextNewDialogueID: Door2
-    GivesItem: 0
-    ItemName: 
+    NewDialogueOnReClick: 0
+    NextNewDialogueID: 
+    GivesItem: 1
+    ItemName: Bloody Knife
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
-      Dialogue: While it is an appealing prospect to just leave, this is not the
-        time to panic. I need to wait for my cilent to arrive.
+      Dialogue: Hmmm looking at this plant again, it looks like there's a sliver
+        glimmer coming from the soil. I wonder if there's something buried inside?
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
-      Dialogue: This is just like any other puzzle, only I need to solve it in front
-        of many people while being articulate and convincing....<i>glup</i>
+      Dialogue: Holy shit, there was a <color=#FF0000>bloody knife</color> that was
+        in the planter!
+    - PlayerIsSpeaker: 1
+      VoiceSpeaker: 0
+      Dialogue: Who would hide this knife here? This is giving me a bad feeling.

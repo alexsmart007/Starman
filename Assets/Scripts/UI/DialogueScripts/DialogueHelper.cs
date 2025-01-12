@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Linq;
 using UnityEngine;
+using static ItemHelperClass;
 
 public static class DialogueHelperClass
 {
@@ -26,6 +27,11 @@ public static class DialogueHelperClass
         [NaughtyAttributes.ShowIf("NewDialogueOnReClick")]
         [NaughtyAttributes.AllowNesting]
         public string NextNewDialogueID;
+
+        public bool GivesItem;
+        [NaughtyAttributes.ShowIf("GivesItem")]
+        [NaughtyAttributes.AllowNesting]
+        public string ItemName;
 
         public List<DialogueData> Dialogues = new List<DialogueData>();
     }

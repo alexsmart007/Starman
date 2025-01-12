@@ -16,8 +16,10 @@ MonoBehaviour:
     ID: Plant
     Conversant: 
     NextDialogueID: exit
-    NewDialogueOnReClick: 0
-    NextNewDialogueID: 
+    NewDialogueOnReClick: 1
+    NextNewDialogueID: Plant2
+    GivesItem: 0
+    ItemName: Bloody Knife
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0

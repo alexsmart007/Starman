@@ -365,6 +365,60 @@ MonoBehaviour:
   dialogueTextField: {fileID: 265855548}
   textBoxImage: {fileID: 46487719}
   voiceTextBoxImage: {fileID: 0}
+--- !u!1 &241806105
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241806107}
+  - component: {fileID: 241806106}
+  m_Layer: 0
+  m_Name: ItemSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &241806106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241806105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b740a21d8af328449f04763f22d2226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllItems:
+  - ItemDescription: 'It''s a kitchen knife that has blood on it! Looks like the
+      blood hasn''t fully dried either, so it must''ve been used recently. I hope
+      that''s not human blood...
+
+
+      It looks like on the handle there''s a distinct
+      symbol, it might be the manufactor''s mark? '
+    ItemName: bloody knife
+    ItemSprite: {fileID: 21300000, guid: 948e977629c34124f960a91a94243253, type: 3}
+--- !u!4 &241806107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241806105}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 805.4904, y: 420.86676, z: -0.27777132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265855546
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +553,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265855546}
   m_CullTransparentMesh: 1
+--- !u!1 &278835091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278835093}
+  - component: {fileID: 278835092}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &278835092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278835091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7fec33fbbb4a0428ef7913753302ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInventory: []
+--- !u!4 &278835093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278835091}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 805.4904, y: 420.86676, z: -0.27777132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &533878262
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,8 +822,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
-  defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: 27ca6fbde4ff09542b997118ba7c1498, type: 2}
   Hand: {fileID: 1205976502}
@@ -987,8 +1084,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
-  defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: 0aaa0e92efe8a004ebe250e06d7a81dd, type: 2}
   Hand: {fileID: 1205976502}
@@ -1157,7 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af7fec33fbbb4a0428ef7913753302ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Inventory: []
+  PlayerInventory: []
 --- !u!1 &1205976501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,8 +1575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
-  defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: c09190c1072c47345975dc0a7f6d13f7, type: 2}
   Hand: {fileID: 1205976502}
@@ -1845,14 +1938,14 @@ MonoBehaviour:
     textureArray:
     - {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
     frameRate: 0.1
-    offset: {x: 10, y: 10}
+    offset: {x: 0, y: 0}
   - cursorType: 1
     textureArray:
     - {fileID: 2800000, guid: e6a4faa0d252b5f418a7676c107a271e, type: 3}
     - {fileID: 2800000, guid: 974d390b3afcd1344a4b654cb55d0ac5, type: 3}
     - {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
     frameRate: 0.1
-    offset: {x: 16, y: 16}
+    offset: {x: 0, y: 0}
 --- !u!4 &1996719891
 Transform:
   m_ObjectHideFlags: 0
@@ -1914,8 +2007,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newSelectionCollider: {fileID: 0}
-  interactiveCursorTexture: {fileID: 2800000, guid: 54a48e6388c68ee4e825e7b845dfd403, type: 3}
-  defaultCursorTexture: {fileID: 2800000, guid: 3ab9ed7de2f4f5544b9e71c8dcdc26ea, type: 3}
   currentCollider: {fileID: 1007216517}
   dialogue: {fileID: 11400000, guid: 6a168c744361f2c479695f4fcf7012d8, type: 2}
   Hand: {fileID: 1205976502}
@@ -2087,3 +2178,5 @@ SceneRoots:
   - {fileID: 1196174415}
   - {fileID: 1205976504}
   - {fileID: 1996719891}
+  - {fileID: 278835093}
+  - {fileID: 241806107}

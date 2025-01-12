@@ -75,6 +75,7 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
     {
         OnDialogueStarted?.Invoke(data);
         if (unlocks.ContainsKey(data.ID) && data.NewDialogueOnReClick) data = (conversationGroup.Find(dataa => dataa.Data.ID.ToLower().Equals(data.NextNewDialogueID.ToLower()))).Data;
+        HandleItem(data);
         if (data.Dialogues.Count >= 1 && !data.Dialogues[0].Dialogue.IsNullOrWhitespace())
         {
             foreach (var dialogue in data.Dialogues)
@@ -114,6 +115,14 @@ public class DialogueManager : SingletonMonoBehavior<DialogueManager>
         else
         {
             unlocks.Add(data.ID, 1);
+        }
+    }
+
+    private void HandleItem(ConversationData data)
+    {
+        if(data.GivesItem && ItemSystem.Instance.CheckForItem(data.ItemName) && !InventoryManager.Instance.CheckForPlayerItem(data.ItemName))
+        {
+            InventoryManager.Instance.GainItem(data.ItemName);
         }
     }
 
