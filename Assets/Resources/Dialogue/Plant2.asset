@@ -19,7 +19,7 @@ MonoBehaviour:
     NewDialogueOnReClick: 0
     NextNewDialogueID: 
     GivesItem: 1
-    ItemName: Bloody Knife
+    ItemName: bloody knife
     Dialogues:
     - PlayerIsSpeaker: 1
       VoiceSpeaker: 0
