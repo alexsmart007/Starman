@@ -10,6 +10,7 @@ public class InputManager : SingletonMonoBehavior<InputManager>
     public static Action<Vector2> OnRotateCamera;
     public static Action OnJump;
     public static Action<InputAction.CallbackContext> OnStarDash;
+    public static Action<Vector2> OnPosition;
 
     public static Action OnClick;
     public static Action OnNextDialogue;
@@ -42,6 +43,11 @@ public class InputManager : SingletonMonoBehavior<InputManager>
             OnJump?.Invoke();
             OnStarDash?.Invoke(context);
         }
+    }
+
+    public void Position(InputAction.CallbackContext context)
+    {
+        OnPosition?.Invoke(context.ReadValue<Vector2>());
     }
 
     public void Click(InputAction.CallbackContext context)
