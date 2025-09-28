@@ -18,7 +18,6 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
 
     public void GainItem(ItemData item)
     {
-        item.ItemName = item.ItemName.ToLowerInvariant();
         PlayerInventory.Add(item);
         OnItemGained?.Invoke(item);
     }
@@ -26,7 +25,6 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
     public void GainItem(string itemName)
     {
         var item = ItemSystem.Instance.GiveItem(itemName);
-        item.ItemName = item.ItemName.ToLowerInvariant();
         PlayerInventory.Add(item);
         OnItemGained?.Invoke(item);
     }
@@ -38,7 +36,6 @@ public class InventoryManager : SingletonMonoBehavior<InventoryManager>
 
     public void DiscardItem(ItemData item)
     {
-        item.ItemName = item.ItemName.ToLower();
         Debug.Assert(PlayerInventory.Contains(item));
         PlayerInventory.Remove(item);
     }
