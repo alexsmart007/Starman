@@ -16,6 +16,7 @@ public class ItemGainedAnimation : MonoBehaviour
     public ItemData Item;
     [SerializeField] GameObject Bag;
     [SerializeField] Camera mainCamera;
+    [SerializeField] Animator panelAnimator;
     public Image myImage;
 
     private Animator m_Animator;
@@ -76,10 +77,18 @@ public class ItemGainedAnimation : MonoBehaviour
         continueInputRecieved = false;
         myImage.enabled = true;
         m_Animator.SetTrigger("MoveItem");
+        panelAnimator.SetTrigger("PanelAppears");
         InputManager.OnClick += OnContinueInput;
         yield return new WaitUntil(() => continueInputRecieved);
         InputManager.OnClick -= OnContinueInput;
+        m_Animator.SetTrigger("MoveItemBag");
+        panelAnimator.SetTrigger("PanelDisappear");
+    }
+
+    private void EndOfAnimation()
+    {
         m_Animator.SetTrigger("BackToWait");
+        panelAnimator.SetTrigger("BackToWait");
     }
 
     private void OnContinueInput() => continueInputRecieved = true;
