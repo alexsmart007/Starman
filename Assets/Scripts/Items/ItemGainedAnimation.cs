@@ -79,7 +79,6 @@ public class ItemGainedAnimation : MonoBehaviour
         InputManager.OnClick += OnContinueInput;
         yield return new WaitUntil(() => continueInputRecieved);
         InputManager.OnClick -= OnContinueInput;
-        myImage.enabled = false;
         m_Animator.SetTrigger("BackToWait");
     }
 
