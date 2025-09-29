@@ -9,6 +9,7 @@ public class InteractClick : MonoBehaviour
     [SerializeField] private CurrentCollider currentCollider;
     [SerializeField] private SOConversationData dialogue;
     [SerializeField] private Animator Hand;
+    [SerializeField] private bool isBag;
     private Cursor cursor;
     private bool cursorIsInteractive = false;
 
@@ -61,7 +62,14 @@ public class InteractClick : MonoBehaviour
         if (newSelectionCollider != null)
         {
             DefaultCursorTexture();
-            DialogueManager.Instance.StartDialogue(dialogue.Data.ID);
+            if (!isBag)
+            {
+                DialogueManager.Instance.StartDialogue(dialogue.Data.ID);
+            }
+            else
+            {
+
+            }
         }
     }
 
